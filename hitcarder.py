@@ -98,8 +98,10 @@ class HitCarder(object):
                 for i, s in enumerate(difflib.ndiff(new_form, form_txt_read)):
                     if s[0]==' ': continue
                     elif s[0]=='-':
+                        print(s)
                         print(u'Delete "{}" from position {}'.format(s[-1],i))
                     elif s[0]=='+':
+                        print(s)
                         print(u'Add "{}" to position {}'.format(s[-1],i))    
                 print()
         #with open("form.txt", "w", encoding="utf-8") as f:
