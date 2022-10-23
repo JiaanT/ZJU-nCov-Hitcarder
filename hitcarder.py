@@ -94,9 +94,8 @@ class HitCarder(object):
             form_txt_read = f.read()
             if new_form == form_txt_read:
                 return True
-            else:
-                with open("form2.txt", "w", encoding="utf-8") as f:
-                    f.write(new_form)
+        with open("form2.txt", "w", encoding="utf-8") as f:
+            f.write(new_form)
         return False
 
     def get_info(self, html=None):
