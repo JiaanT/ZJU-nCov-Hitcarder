@@ -95,15 +95,17 @@ class HitCarder(object):
             if new_form == form_txt_read:
                 return True
             else:
-                for i, s in enumerate(difflib.ndiff(new_form, form_txt_read)):
-                    if s[0]==' ': continue
-                    elif s[0]=='-':
-                        print(s)
-                        print(u'Delete "{}" from position {}'.format(s[-1],i))
-                    elif s[0]=='+':
-                        print(s)
-                        print(u'Add "{}" to position {}'.format(s[-1],i))    
-                print()
+                diff = difflib.ndiff(new_form, form_txt_read)
+                print(''.join(diff), end="")
+#                 for i, s in enumerate(difflib.ndiff(new_form, form_txt_read)):
+#                     if s[0]==' ': continue
+#                     elif s[0]=='-':
+#                         print(s)
+#                         print(u'Delete "{}" from position {}'.format(s[-1],i))
+#                     elif s[0]=='+':
+#                         print(s)
+#                         print(u'Add "{}" to position {}'.format(s[-1],i))    
+#                 print()
         #with open("form.txt", "w", encoding="utf-8") as f:
         #     f.write(new_form)
         return False
